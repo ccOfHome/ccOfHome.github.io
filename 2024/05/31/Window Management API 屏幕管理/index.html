@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Window Management API 屏幕管理 | CC码码</title><meta name="author" content="ccmama"><meta name="copyright" content="ccmama"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="以后就看它了！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Window Management API 屏幕管理">
+<meta property="og:url" content="http://ccmama.ccofhome.top/2024/05/31/Window%20Management%20API%20%E5%B1%8F%E5%B9%95%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:site_name" content="CC码码">
+<meta property="og:description" content="以后就看它了！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ccmama.ccofhome.top/img/background.jpg">
+<meta property="article:published_time" content="2024-05-31T11:30:00.000Z">
+<meta property="article:modified_time" content="2024-05-31T11:30:00.000Z">
+<meta property="article:author" content="ccmama">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ccmama.ccofhome.top/img/background.jpg"><link rel="shortcut icon" href="/img/ccmama.jpg"><link rel="canonical" href="http://ccmama.ccofhome.top/2024/05/31/Window%20Management%20API%20%E5%B1%8F%E5%B9%95%E7%AE%A1%E7%90%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><meta name="baidu-site-verification" content="codeva-HgC5kmjjze"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f5a2a4e0af60b94176269edc3624e7cd";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: ccmama","link":"链接: ","source":"来源: CC码码","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Window Management API 屏幕管理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-05-31 19:30:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="/img/ccmama.jpg"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/ccmama.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/background.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="CC码码"><img class="site-icon" src="/img/ccmama.jpg"/></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Window Management API 屏幕管理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2024-05-31T11:30:00.000Z" title="发表于 2024-05-31 19:30:00">2024-05-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Window Management API 屏幕管理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>大家好，我是CC，在这里欢迎大家的到来～</p>
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>我们在开发工作中经常会使用多个屏幕，多屏操作更加方便快捷；那知道如何在浏览器里进行多屏幕的管理呢？</p>
+<p>使用 Web API 的 Window Management API。虽然目前它的兼容性还不是很全，但是未来可期，而且它得使用场景颇为广泛。</p>
+<ol>
+<li>假如我是一个投资者，每天需要面对很多屏幕来浏览股市涨跌。</li>
+</ol>
+<p><img src="/img/4/image_1.png"></p>
+<ol>
+<li>假如我是一个保安，保卫一方平安，每天要盯着监控录像。</li>
+</ol>
+<p><img src="/img/4/image_2.png"></p>
+<p>下面进入正文，我们来试试 Window Management API 的效果。</p>
+<h2 id="屏幕权限"><a href="#屏幕权限" class="headerlink" title="屏幕权限"></a>屏幕权限</h2><p>浏览器安全策略的缘故，当我们想使用浏览器提供的一些 API 时，需要手动授权。</p>
+<p>我们现在需要获取的是 window-management 的使用权限。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const permission = await queryWindowManagement();</span><br><span class="line"></span><br><span class="line">async function queryWindowManagement() &#123;</span><br><span class="line">  // https://developer.mozilla.org/zh-CN/docs/Web/API/Permissions/query</span><br><span class="line">  return await navigator.permissions.query(&#123; name: &#x27;window-management&#x27; &#125;);;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (permission.state === &quot;granted&quot;) &#123; // 已经授权</span><br><span class="line">  // 执行下一步</span><br><span class="line">&#125; else if (permission.state === &quot;prompt&quot;) &#123; // 询问是否授权</span><br><span class="line">  // 请求授权</span><br><span class="line">&#125; else if (permission.state === &quot;denied&quot;) &#123;</span><br><span class="line">  // 权限被拒绝</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>询问是否授权这里目前有一个坑：</p>
+<p>有的Web API 自身有请求权限的方法，比如 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Notifications_API">Notifications API</a> 有方法 requesePermission() ；但是有的没有，比如 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Geolocation">Geolocation API</a>。恰巧 Window Management API 也没，<strong>悲催</strong>。</p>
+<p>但是 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Permissions">Permissions API</a> 未来会提供统一的请求权限的方法 Permissions.request() 和 Permissions.requestAll() ，截止文章发布时间这两个方法<strong>未有浏览器实现</strong>。</p>
+<p><strong>所以这里我们只能手动去更改浏览器的权限。</strong></p>
+<h2 id="屏幕信息"><a href="#屏幕信息" class="headerlink" title="屏幕信息"></a>屏幕信息</h2><p>在获取到屏幕权限后，我们就可以查看屏幕的详细信息了。</p>
+<p>但是在这之前，我们需要了解一个概念——多屏原点。</p>
+<h3 id="多屏原点"><a href="#多屏原点" class="headerlink" title="多屏原点"></a>多屏原点</h3><blockquote>
+<p><strong>多屏原点</strong>——通俗来讲，就是把我们的屏幕放到一个直角坐标系里，原点O(0,0)点就是我们的多屏原点。那哪个位置是原点呢？</p>
+</blockquote>
+<p>我们使用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Window_Management_API/Multi-screen_origin">MDN的例子</a>：1920 x 1080 扩展屏设置为主显示器，1440 x 900 电脑显示器设置为辅助显示器，操作系统 UI 在屏幕顶部占用 25px。</p>
+<ol>
+<li><strong>当辅助屏幕位于主屏幕右侧，多屏原点就是主显示器的左上角，坐标(0,0)</strong></li>
+</ol>
+<p><img src="/img/4/image_3.png"></p>
+<ol start="2">
+<li><strong>当辅助屏幕位于主屏幕左侧，多屏原点也是主显示器的左上角，坐标(0,0)</strong></li>
+</ol>
+<p><img src="/img/4/image_4.png"></p>
+<h3 id="ScreenDetailed"><a href="#ScreenDetailed" class="headerlink" title="ScreenDetailed"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/ScreenDetailed">ScreenDetailed</a></h3><p>继承 <strong>Screen</strong> 对象，用户可用屏幕设备的属性</p>
+<ul>
+<li>label 屏幕名称</li>
+<li>isPrimary 是否是主屏幕</li>
+<li>isInternal 是电脑自带屏还是外接屏</li>
+<li>top 相对多幕原点顶部距离</li>
+<li>left 相对多幕原点的横向距离</li>
+<li>availTop 可用屏幕区域相对多屏原点的 y 坐标</li>
+<li>availLeft 可用屏幕区域相对多屏原点的 x 坐标</li>
+<li>devicePixelRatio 设备像素比</li>
+<li>isExtended 是否有多个屏幕</li>
+</ul>
+<h3 id="Screen"><a href="#Screen" class="headerlink" title="Screen"></a>Screen</h3><ul>
+<li>width 屏宽</li>
+<li>height 屏高</li>
+<li>availWidth 浏览器最大宽度</li>
+<li>availHeight 浏览器最大高度</li>
+<li>pixelDepth 位深度&#x2F;色彩深度</li>
+<li>colorDepth 颜色深度</li>
+<li>orientation 屏幕当前方向</li>
+</ul>
+<p>以上属性我们在哪里能看到呢？通过 window.getScreenDetails() 方法返回一个 ScreenDetails 对象，包含 currentScreen 当前屏幕的属性和 screens 所有可用屏幕的属性。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let screens = [];</span><br><span class="line">let currentScreen = null;</span><br><span class="line">let screenDetails = null;</span><br><span class="line"></span><br><span class="line">screenDetails = await window.getScreenDetails();</span><br><span class="line">currentScreen = screenDetails.currentScreen;</span><br><span class="line">screens.push(...screenDetails.screens);</span><br></pre></td></tr></table></figure>
+
+<h2 id="投送屏幕"><a href="#投送屏幕" class="headerlink" title="投送屏幕"></a>投送屏幕</h2><p>屏幕投送就是把某个内容的浏览器放到某个屏幕上。</p>
+<p><strong>有两种方式：</strong></p>
+<p>一是通过在某个坐标点打开新的浏览器窗口或者标签页，二者可以把当前浏览器移动到屏幕上。</p>
+<h3 id="打开"><a href="#打开" class="headerlink" title="打开"></a>打开</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function delivery (screen, url) &#123;</span><br><span class="line">  const &#123;top, left, width, height&#125; = screen;</span><br><span class="line">  const features = [</span><br><span class="line">    `left=$&#123;left&#125;`,</span><br><span class="line">    `top=$&#123;top&#125;`,</span><br><span class="line">    `width=$&#123;width&#125;`,</span><br><span class="line">    `height=$&#123;height&#125;`,</span><br><span class="line">    `menubar=no`,</span><br><span class="line">    `toolbar=no`,</span><br><span class="line">    `location=no`,</span><br><span class="line">    `status=no`,</span><br><span class="line">    `resizable=yes`,</span><br><span class="line">    `scrollbars=no`</span><br><span class="line">  ].join(&quot;,&quot;);</span><br><span class="line">  return window.open(url, Math.random().toString(), features);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：在 Mac 笔记本上如果当前浏览器处于全屏状态，window.open 会打开一个标签页，而如果当前浏览器未处于全屏状态下的话 window.open 会重新打开新的浏览器窗口。</p>
+</blockquote>
+<h3 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function move(top, left) &#123;</span><br><span class="line">  window.moveTo(top, left);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="全屏"><a href="#全屏" class="headerlink" title="全屏"></a>全屏</h2><p>屏幕全屏可以控制把某个 DOM 全屏以及全屏放置到哪个屏幕上。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">async function toggleFullscreen(screenId) &#123;</span><br><span class="line">  await toggleElementFullscreen(document.body, screenId);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">async function toggleElementFullscreen(element, screenId) &#123;</span><br><span class="line">  if (Number.isInteger(screenId) &amp;&amp; screenId &gt;= 0 &amp;&amp; screenId &lt; screens.length) &#123;</span><br><span class="line">    // 选择在对应屏幕上全屏展示</span><br><span class="line">    await element.requestFullscreen(&#123; screen: screens[screenId] &#125;);</span><br><span class="line">  &#125; else if (document.fullscreenElement == element) &#123;</span><br><span class="line">    // 如果已经全屏则退出全屏</span><br><span class="line">    await document.exitFullscreen();</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    // 默认在当前屏幕全屏</span><br><span class="line">    await element.requestFullscreen();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="监听屏幕变化"><a href="#监听屏幕变化" class="headerlink" title="监听屏幕变化"></a>监听屏幕变化</h2><h3 id="change"><a href="#change" class="headerlink" title="change()"></a>change()</h3><p>change 事件是 Screen 对象上的，只有 Screen 上一个或多个属性发生改变时就会触发特定屏幕上的 change 事件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const firstScreen = (await window.getScreenDetails()).screens[0];</span><br><span class="line"></span><br><span class="line">firstScreen.addEventListener(&quot;change&quot;, (event) =&gt; &#123;</span><br><span class="line">  console.log(&quot;The first screen has changed.&quot;, event, firstScreen);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="currentscreenchange"><a href="#currentscreenchange" class="headerlink" title="currentscreenchange()"></a>currentscreenchange()</h3><p>currentscreenchange 事件属于 ScreenDetails 对象，触发事件的行为有以下几个：</p>
+<ol>
+<li>当前浏览器窗口被移动到其他屏幕上</li>
+<li>Screen 对象的一个或多个属性值发生变化</li>
+<li>ScreenDetails 对象的以下一个或多个属性值发生变化</li>
+</ol>
+<ul>
+<li>isPrimary</li>
+<li>isInternal</li>
+<li>top</li>
+<li>left</li>
+<li>availTop</li>
+<li>availLeft</li>
+<li>devicePixelRatio</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const screenDetails = await window.getScreenDetails();</span><br><span class="line"></span><br><span class="line">screenDetails.addEventListener(&quot;currentscreenchange&quot;, (event) =&gt; &#123;</span><br><span class="line">  const details = screenDetails.currentScreen;</span><br><span class="line">  console.log(&quot;The current screen has changed.&quot;, event, details);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="screenchange"><a href="#screenchange" class="headerlink" title="screenchange()"></a>screenchange()</h3><p>screenchange 事件也属于 ScreenDetails 对象，当系统可用的屏幕集发生变化时，像有新屏幕可用或现有屏幕不可用，比如拔掉扩展屏的 HDMI 连线就是现有屏幕不可用。</p>
+<p>当触发 screenchange 事件时，我们就能监测到什么时候可用屏幕发生了更改，然后上报更改，关闭所有的浏览器窗口，最后重新打开所有窗口来适应新的屏幕配置。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const screenDetails = await window.getScreenDetails();</span><br><span class="line"></span><br><span class="line">let noOfScreens = screenDetails.screens.length;</span><br><span class="line"></span><br><span class="line">screenDetails.addEventListener(&quot;screenschange&quot;, () =&gt; &#123;</span><br><span class="line">  if (screenDetails.screens.length !== noOfScreens) &#123;</span><br><span class="line">    console.log(</span><br><span class="line">      `The screen count changed from $&#123;noOfScreens&#125; to $&#123;screenDetails.screens.length&#125;`,</span><br><span class="line">    );</span><br><span class="line">    noOfScreens = screenDetails.screens.length;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  updateWindows();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="更多有趣的-Demo"><a href="#更多有趣的-Demo" class="headerlink" title="更多有趣的 Demo"></a>更多有趣的 Demo</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://mdn.github.io/dom-examples/window-management-api/">多窗口的代码学习环境</a></li>
+<li><a target="_blank" rel="noopener" href="https://googlechromelabs.github.io/multi-window-platformer-game/">多窗口游戏</a></li>
+<li><a target="_blank" rel="noopener" href="https://window-placement.glitch.me/">交易平台</a></li>
+<li><a target="_blank" rel="noopener" href="https://michaelwasserman.github.io/window-placement-demo/">功能性 Demo</a></li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Window_Management_API">https://developer.mozilla.org/en-US/docs/Web/API/Window_Management_API</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API">https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://ccmama.ccofhome.top">ccmama</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://ccmama.ccofhome.top/2024/05/31/Window%20Management%20API%20%E5%B1%8F%E5%B9%95%E7%AE%A1%E7%90%86/">http://ccmama.ccofhome.top/2024/05/31/Window Management API 屏幕管理/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://ccmama.ccofhome.top" target="_blank">CC码码</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></div><div class="post_share"><div class="social-share" data-image="/img/background.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/04/24/Canvas%20%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0%E5%8F%AF%E4%BA%A4%E4%BA%92%E6%8A%A0%E5%9B%BE%EF%BC%8C%E8%AE%A9%20Midjourney%20%E9%87%8D%E7%BB%98/" title="Canvas 实现可交互抠图，让 Midjourney 局部重绘"><img class="cover" src="/img/background.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Canvas 实现可交互抠图，让 Midjourney 局部重绘</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/04/17/%E5%89%8D%E7%AB%AF%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87(Mac%E3%80%81Window%E9%80%9A%E7%94%A8)/" title="前端装机必备(Mac、Window通用)"><img class="cover" src="/img/background.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-17</div><div class="title">前端装机必备(Mac、Window通用)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/ccmama.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ccmama</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">更多AI福利，敬请关注公众号《CC码码》</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%8F%E5%B9%95%E6%9D%83%E9%99%90"><span class="toc-number">2.</span> <span class="toc-text">屏幕权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%8F%E5%B9%95%E4%BF%A1%E6%81%AF"><span class="toc-number">3.</span> <span class="toc-text">屏幕信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%B1%8F%E5%8E%9F%E7%82%B9"><span class="toc-number">3.1.</span> <span class="toc-text">多屏原点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ScreenDetailed"><span class="toc-number">3.2.</span> <span class="toc-text">ScreenDetailed</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Screen"><span class="toc-number">3.3.</span> <span class="toc-text">Screen</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%95%E9%80%81%E5%B1%8F%E5%B9%95"><span class="toc-number">4.</span> <span class="toc-text">投送屏幕</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80"><span class="toc-number">4.1.</span> <span class="toc-text">打开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8"><span class="toc-number">4.2.</span> <span class="toc-text">移动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A8%E5%B1%8F"><span class="toc-number">5.</span> <span class="toc-text">全屏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%91%E5%90%AC%E5%B1%8F%E5%B9%95%E5%8F%98%E5%8C%96"><span class="toc-number">6.</span> <span class="toc-text">监听屏幕变化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#change"><span class="toc-number">6.1.</span> <span class="toc-text">change()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#currentscreenchange"><span class="toc-number">6.2.</span> <span class="toc-text">currentscreenchange()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#screenchange"><span class="toc-number">6.3.</span> <span class="toc-text">screenchange()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A%E6%9C%89%E8%B6%A3%E7%9A%84-Demo"><span class="toc-number">7.</span> <span class="toc-text">更多有趣的 Demo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">8.</span> <span class="toc-text">参考资料</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/05/31/Window%20Management%20API%20%E5%B1%8F%E5%B9%95%E7%AE%A1%E7%90%86/" title="Window Management API 屏幕管理"><img src="/img/background.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Window Management API 屏幕管理"/></a><div class="content"><a class="title" href="/2024/05/31/Window%20Management%20API%20%E5%B1%8F%E5%B9%95%E7%AE%A1%E7%90%86/" title="Window Management API 屏幕管理">Window Management API 屏幕管理</a><time datetime="2024-05-31T11:30:00.000Z" title="发表于 2024-05-31 19:30:00">2024-05-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/24/Canvas%20%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0%E5%8F%AF%E4%BA%A4%E4%BA%92%E6%8A%A0%E5%9B%BE%EF%BC%8C%E8%AE%A9%20Midjourney%20%E9%87%8D%E7%BB%98/" title="Canvas 实现可交互抠图，让 Midjourney 局部重绘"><img src="/img/background.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Canvas 实现可交互抠图，让 Midjourney 局部重绘"/></a><div class="content"><a class="title" href="/2024/04/24/Canvas%20%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0%E5%8F%AF%E4%BA%A4%E4%BA%92%E6%8A%A0%E5%9B%BE%EF%BC%8C%E8%AE%A9%20Midjourney%20%E9%87%8D%E7%BB%98/" title="Canvas 实现可交互抠图，让 Midjourney 局部重绘">Canvas 实现可交互抠图，让 Midjourney 局部重绘</a><time datetime="2024-04-24T01:30:00.000Z" title="发表于 2024-04-24 09:30:00">2024-04-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/21/AI&amp;AIGC%E7%9B%98%E7%82%B9/" title="AI&amp;AIGC盘点"><img src="/img/background.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AI&amp;AIGC盘点"/></a><div class="content"><a class="title" href="/2024/04/21/AI&amp;AIGC%E7%9B%98%E7%82%B9/" title="AI&amp;AIGC盘点">AI&amp;AIGC盘点</a><time datetime="2024-04-21T01:30:00.000Z" title="发表于 2024-04-21 09:30:00">2024-04-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/17/%E5%89%8D%E7%AB%AF%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87(Mac%E3%80%81Window%E9%80%9A%E7%94%A8)/" title="前端装机必备(Mac、Window通用)"><img src="/img/background.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端装机必备(Mac、Window通用)"/></a><div class="content"><a class="title" href="/2024/04/17/%E5%89%8D%E7%AB%AF%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87(Mac%E3%80%81Window%E9%80%9A%E7%94%A8)/" title="前端装机必备(Mac、Window通用)">前端装机必备(Mac、Window通用)</a><time datetime="2024-04-17T01:00:00.000Z" title="发表于 2024-04-17 09:00:00">2024-04-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By ccmama</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
