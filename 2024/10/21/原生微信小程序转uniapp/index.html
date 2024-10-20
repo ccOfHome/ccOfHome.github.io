@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>原生微信小程序转uniapp | CC码码</title><meta name="author" content="ccmama"><meta name="copyright" content="ccmama"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="如果恰巧需要将各种原生小程序转为 uniapp 项目，那请看完这篇文章。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原生微信小程序转uniapp">
+<meta property="og:url" content="http://ccmama.ccofhome.top/2024/10/21/%E5%8E%9F%E7%94%9F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BD%ACuniapp/index.html">
+<meta property="og:site_name" content="CC码码">
+<meta property="og:description" content="如果恰巧需要将各种原生小程序转为 uniapp 项目，那请看完这篇文章。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ccmama.ccofhome.top/img/5/image_1.png">
+<meta property="article:published_time" content="2024-10-21T01:00:00.000Z">
+<meta property="article:modified_time" content="2024-10-21T01:00:00.000Z">
+<meta property="article:author" content="ccmama">
+<meta property="article:tag" content="前端 原生小程序 uniapp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ccmama.ccofhome.top/img/5/image_1.png"><link rel="shortcut icon" href="/img/ccmama.jpg"><link rel="canonical" href="http://ccmama.ccofhome.top/2024/10/21/%E5%8E%9F%E7%94%9F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BD%ACuniapp/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><meta name="baidu-site-verification" content="codeva-HgC5kmjjze"/><link rel="manifest" href="/img/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/img/ccmama.jpg"/><link rel="icon" type="image/png" sizes="32x32" href="/img/ccmama.jpg"/><link rel="icon" type="image/png" sizes="16x16" href="/img/ccmama.jpg"/><link rel="mask-icon" href="/img/ccmama.jpg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f5a2a4e0af60b94176269edc3624e7cd";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: ccmama","link":"链接: ","source":"来源: CC码码","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '原生微信小程序转uniapp',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-21 09:00:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="/img/ccmama.jpg"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/ccmama.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/background.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="CC码码"><img class="site-icon" src="/img/ccmama.jpg"/></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">原生微信小程序转uniapp</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2024-10-21T01:00:00.000Z" title="发表于 2024-10-21 09:00:00">2024-10-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">568</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="原生微信小程序转uniapp"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>大家好，我是CC，在这里欢迎大家的到来～</p>
+<blockquote>
+<p>如果恰巧需要将各种<strong>原生小程序</strong>转为 <strong>uniapp</strong> 项目，那请看完这篇文章。</p>
+</blockquote>
+<p>之前原生开发了一款微信小程序，在审核上线阶段接连几次审核不过，就想着直接转 App 去使用了。但是手工去转的话时间成本过大，就想着看有没有一个工具可以解决这个问题。果然在 <strong>DCloud 插件市场</strong>里看到了 <strong>miniprogram-to-uniapp</strong>，这个插件功能满足需求，转化过程也还顺利，就来安利一下。</p>
+<p>进入正文：</p>
+<h3 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h3><p><strong>HBuilderX 2.9+以上版本</strong></p>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><ol>
+<li>打开 HBuilderX 软件</li>
+<li>在当前页面点击“下载插件并导入HBuilderX”，看完激励视频广告后会提示下载插件</li>
+</ol>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://ext.dcloud.net.cn/plugin?id=2656">https://ext.dcloud.net.cn/plugin?id=2656</a></p>
+</blockquote>
+<ol start="3">
+<li>确认是否下载完成</li>
+</ol>
+<p>在项目根目录文件夹上右键可以看到这个安装后的插件</p>
+<p><img src="/img/6/image_1.png"></p>
+<h3 id="转化代码"><a href="#转化代码" class="headerlink" title="转化代码"></a>转化代码</h3><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p><img src="/img/6/image_2.png"></p>
+<ol>
+<li>wxss 文件的样式会写到 vue 文件的 style 标签里</li>
+<li>支持 vant 组件库的转换（使用 wxcomponents 方案）</li>
+<li>通过 import、template 使用模版 和 通过 include 方式引入组件会转化为 vue 引入使用组件的方式</li>
+</ol>
+<h3 id="平台配置"><a href="#平台配置" class="headerlink" title="平台配置"></a>平台配置</h3><ol>
+<li>云服务空间配置<code>服务空间名称</code></li>
+<li>创建云数据库数据表</li>
+<li>上传云函数&#x2F;云对象</li>
+</ol>
+<h3 id="转化后存在的问题以及如何修改"><a href="#转化后存在的问题以及如何修改" class="headerlink" title="转化后存在的问题以及如何修改"></a>转化后存在的问题以及如何修改</h3><h4 id="App中不支持-wx-showShareMenu-方法"><a href="#App中不支持-wx-showShareMenu-方法" class="headerlink" title="App中不支持 wx.showShareMenu() 方法"></a>App中不支持 wx.showShareMenu() 方法</h4><p>详情可看点击<a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/api/plugins/share.html#showsharemenu">这里</a></p>
+<p>解决方案：注释掉或者自定义该方法</p>
+<h4 id="App不支持-navigateToMiniProgram-方法"><a href="#App不支持-navigateToMiniProgram-方法" class="headerlink" title="App不支持 navigateToMiniProgram() 方法"></a>App不支持 navigateToMiniProgram() 方法</h4><p>但是支持打开微信小程序，使用plus.share的launchMiniProgram</p>
+<p>详情可看点击<a target="_blank" rel="noopener" href="https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService.launchMiniProgram">这里</a></p>
+<h4 id="图片路径"><a href="#图片路径" class="headerlink" title="图片路径"></a>图片路径</h4><p>图片使用的 OSS 存储，因此不需要更改路径</p>
+<p>如若没有使用 OSS 存储，就需要考虑修改路径</p>
+<h4 id="wxs-文件"><a href="#wxs-文件" class="headerlink" title="wxs 文件"></a>wxs 文件</h4><p>因为vue中不识别 wxs 文件，需要将其转化为 filter 方法</p>
+<h4 id="云函数"><a href="#云函数" class="headerlink" title="云函数"></a>云函数</h4><p>之前开发微信小程序使用的云开发，在 uniapp 这边提供的是阿里云云开发，因而会产生一些错误。</p>
+<h5 id="wx-cloud-database-方法未替换完全"><a href="#wx-cloud-database-方法未替换完全" class="headerlink" title="wx.cloud.database() 方法未替换完全"></a>wx.cloud.database() 方法未替换完全</h5><p>将<code>wx.cloud.database()</code>方法更改为<code>uniCloud.database()</code></p>
+<h5 id="app-globalData-xxx-未替换"><a href="#app-globalData-xxx-未替换" class="headerlink" title="app.globalData.xxx 未替换"></a>app.globalData.xxx 未替换</h5><p>将<code>app.globalData.xxx</code>替换为<code>app.xxx</code></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://ccmama.ccofhome.top">ccmama</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://ccmama.ccofhome.top/2024/10/21/%E5%8E%9F%E7%94%9F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BD%ACuniapp/">http://ccmama.ccofhome.top/2024/10/21/原生微信小程序转uniapp/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://ccmama.ccofhome.top" target="_blank">CC码码</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF-%E5%8E%9F%E7%94%9F%E5%B0%8F%E7%A8%8B%E5%BA%8F-uniapp/">前端 原生小程序 uniapp</a></div><div class="post_share"><div class="social-share" data-image="/img/5/image_1.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/06/21/%E5%89%8D%E7%AB%AF%E5%8F%AF%E4%BB%A5%E7%8E%A9%E2%80%9C%E9%94%81%E2%80%9D%F0%9F%94%90%E4%BA%86/" title="前端可以玩“锁”🔐了"><img class="cover" src="/img/5/image_1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">前端可以玩“锁”🔐了</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/ccmama.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ccmama</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">更多AI福利，敬请关注公众号《CC码码》</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">安装插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E5%8C%96%E4%BB%A3%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">转化代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">3.1.</span> <span class="toc-text">配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E5%8F%B0%E9%85%8D%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">平台配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E5%8C%96%E5%90%8E%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9"><span class="toc-number">5.</span> <span class="toc-text">转化后存在的问题以及如何修改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#App%E4%B8%AD%E4%B8%8D%E6%94%AF%E6%8C%81-wx-showShareMenu-%E6%96%B9%E6%B3%95"><span class="toc-number">5.1.</span> <span class="toc-text">App中不支持 wx.showShareMenu() 方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#App%E4%B8%8D%E6%94%AF%E6%8C%81-navigateToMiniProgram-%E6%96%B9%E6%B3%95"><span class="toc-number">5.2.</span> <span class="toc-text">App不支持 navigateToMiniProgram() 方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84"><span class="toc-number">5.3.</span> <span class="toc-text">图片路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wxs-%E6%96%87%E4%BB%B6"><span class="toc-number">5.4.</span> <span class="toc-text">wxs 文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%91%E5%87%BD%E6%95%B0"><span class="toc-number">5.5.</span> <span class="toc-text">云函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#wx-cloud-database-%E6%96%B9%E6%B3%95%E6%9C%AA%E6%9B%BF%E6%8D%A2%E5%AE%8C%E5%85%A8"><span class="toc-number">5.5.1.</span> <span class="toc-text">wx.cloud.database() 方法未替换完全</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#app-globalData-xxx-%E6%9C%AA%E6%9B%BF%E6%8D%A2"><span class="toc-number">5.5.2.</span> <span class="toc-text">app.globalData.xxx 未替换</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/10/21/%E5%8E%9F%E7%94%9F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BD%ACuniapp/" title="原生微信小程序转uniapp"><img src="/img/5/image_1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="原生微信小程序转uniapp"/></a><div class="content"><a class="title" href="/2024/10/21/%E5%8E%9F%E7%94%9F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BD%ACuniapp/" title="原生微信小程序转uniapp">原生微信小程序转uniapp</a><time datetime="2024-10-21T01:00:00.000Z" title="发表于 2024-10-21 09:00:00">2024-10-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/21/%E5%89%8D%E7%AB%AF%E5%8F%AF%E4%BB%A5%E7%8E%A9%E2%80%9C%E9%94%81%E2%80%9D%F0%9F%94%90%E4%BA%86/" title="前端可以玩“锁”🔐了"><img src="/img/5/image_1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端可以玩“锁”🔐了"/></a><div class="content"><a class="title" href="/2024/06/21/%E5%89%8D%E7%AB%AF%E5%8F%AF%E4%BB%A5%E7%8E%A9%E2%80%9C%E9%94%81%E2%80%9D%F0%9F%94%90%E4%BA%86/" title="前端可以玩“锁”🔐了">前端可以玩“锁”🔐了</a><time datetime="2024-06-21T01:30:00.000Z" title="发表于 2024-06-21 09:30:00">2024-06-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/31/Window%20Management%20API%20%E5%B1%8F%E5%B9%95%E7%AE%A1%E7%90%86/" title="Window Management API 屏幕管理"><img src="/img/4/image_1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Window Management API 屏幕管理"/></a><div class="content"><a class="title" href="/2024/05/31/Window%20Management%20API%20%E5%B1%8F%E5%B9%95%E7%AE%A1%E7%90%86/" title="Window Management API 屏幕管理">Window Management API 屏幕管理</a><time datetime="2024-05-31T11:30:00.000Z" title="发表于 2024-05-31 19:30:00">2024-05-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/24/Canvas%20%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0%E5%8F%AF%E4%BA%A4%E4%BA%92%E6%8A%A0%E5%9B%BE%EF%BC%8C%E8%AE%A9%20Midjourney%20%E9%87%8D%E7%BB%98/" title="Canvas 实现可交互抠图，让 Midjourney 局部重绘"><img src="/img/3/image_2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Canvas 实现可交互抠图，让 Midjourney 局部重绘"/></a><div class="content"><a class="title" href="/2024/04/24/Canvas%20%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0%E5%8F%AF%E4%BA%A4%E4%BA%92%E6%8A%A0%E5%9B%BE%EF%BC%8C%E8%AE%A9%20Midjourney%20%E9%87%8D%E7%BB%98/" title="Canvas 实现可交互抠图，让 Midjourney 局部重绘">Canvas 实现可交互抠图，让 Midjourney 局部重绘</a><time datetime="2024-04-24T01:30:00.000Z" title="发表于 2024-04-24 09:30:00">2024-04-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/21/AI&amp;AIGC%E7%9B%98%E7%82%B9/" title="AI&amp;AIGC盘点"><img src="/img/2/image_3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AI&amp;AIGC盘点"/></a><div class="content"><a class="title" href="/2024/04/21/AI&amp;AIGC%E7%9B%98%E7%82%B9/" title="AI&amp;AIGC盘点">AI&amp;AIGC盘点</a><time datetime="2024-04-21T01:30:00.000Z" title="发表于 2024-04-21 09:30:00">2024-04-21</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By ccmama</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><span>晋ICP备20004225号</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
