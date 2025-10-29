@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>前端2D地图和3D场景中的坐标系 | CC码码</title><meta name="author" content="CC码码"><meta name="copyright" content="CC码码"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前端2D地图和3D场景中的坐标系">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端2D地图和3D场景中的坐标系">
+<meta property="og:url" content="https://ccofhome.github.io/2025/10/30/%E5%89%8D%E7%AB%AF2D%E5%9C%B0%E5%9B%BE%E5%92%8C3D%E5%9C%BA%E6%99%AF%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87%E7%B3%BB/index.html">
+<meta property="og:site_name" content="CC码码">
+<meta property="og:description" content="前端2D地图和3D场景中的坐标系">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ccofhome.github.io/img/9/image_1.jpg">
+<meta property="article:published_time" content="2025-10-30T01:30:00.000Z">
+<meta property="article:modified_time" content="2025-10-30T01:30:00.000Z">
+<meta property="article:author" content="CC码码">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ccofhome.github.io/img/9/image_1.jpg"><link rel="shortcut icon" href="/img/ccmama.jpg"><link rel="canonical" href="https://ccofhome.github.io/2025/10/30/%E5%89%8D%E7%AB%AF2D%E5%9C%B0%E5%9B%BE%E5%92%8C3D%E5%9C%BA%E6%99%AF%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87%E7%B3%BB/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><meta name="baidu-site-verification" content="codeva-HgC5kmjjze"/><link rel="manifest" href="/img/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/img/ccmama.jpg"/><link rel="icon" type="image/png" sizes="32x32" href="/img/ccmama.jpg"/><link rel="icon" type="image/png" sizes="16x16" href="/img/ccmama.jpg"/><link rel="mask-icon" href="/img/ccmama.jpg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f5a2a4e0af60b94176269edc3624e7cd";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: CC码码","link":"链接: ","source":"来源: CC码码","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '前端2D地图和3D场景中的坐标系',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-10-30 09:30:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="/img/ccmama.jpg"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/ccmama.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/background.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="CC码码"><img class="site-icon" src="/img/ccmama.jpg"/></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">前端2D地图和3D场景中的坐标系</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2025-10-30T01:30:00.000Z" title="发表于 2025-10-30 09:30:00">2025-10-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">916</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="前端2D地图和3D场景中的坐标系"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>大家好，我是 CC，在这里欢迎大家的到来~</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>从事前端开发的前两年，做了不少和地图、3D场景相关的项目，其中涉及到很多坐标系，使用时傻傻分不清。现在有时间整理总结下<strong>常用常见</strong>坐标系。</p>
+<h2 id="2D地图坐标系"><a href="#2D地图坐标系" class="headerlink" title="2D地图坐标系"></a>2D地图坐标系</h2><h3 id="WGS84-世界大地测量系统（1984年）"><a href="#WGS84-世界大地测量系统（1984年）" class="headerlink" title="WGS84 - 世界大地测量系统（1984年）"></a>WGS84 - 世界大地测量系统（1984年）</h3><p>数值：大地经度（longitude）大地纬度（latitude）大地高度（altitude）</p>
+<p>地心坐标系，空间直角坐标系，是国际上 <strong>GPS</strong> 使用的坐标系。</p>
+<ol>
+<li>坐标原点为地球质心</li>
+<li>Z轴指向BIH（国际时间服务机构）1984.0定义的协议地球极（CTP)方向</li>
+<li>X轴指向BIH1984.0的零子午面和CTP赤道的交点</li>
+<li>Y轴与Z轴、X轴垂直构成右手坐标系</li>
+</ol>
+<p><img src="/img/9/image_2.png"></p>
+<h3 id="CGCS2000-2000国家大地坐标系"><a href="#CGCS2000-2000国家大地坐标系" class="headerlink" title="CGCS2000 - 2000国家大地坐标系"></a>CGCS2000 - 2000国家大地坐标系</h3><p>中国最新国家大地坐标系，与 WGS84 相似。</p>
+<p>采用 ITRF97 框架、2000.0历元的三位地心坐标系统。</p>
+<ol>
+<li>原点位于海洋和大气的整个地球的质量中心</li>
+<li>Z轴指向由原点指向历元2000.0的地球参考极的方向</li>
+<li>X轴指向由原点指向格林尼治参考子午线与地球赤道面(历元2000.0)的交点</li>
+<li>Y轴与Z轴、X轴构成右手正交坐标系，采用广义相对论意义下的尺度</li>
+</ol>
+<h3 id="GCJ-02-火星坐标系"><a href="#GCJ-02-火星坐标系" class="headerlink" title="GCJ-02 - 火星坐标系"></a>GCJ-02 - 火星坐标系</h3><p>中国国家测绘局绘制的地理坐标系统，加密后的坐标（在原始坐标（WGS84坐标）基础上进行偏移后得到新的坐标）。</p>
+<p>在中国境内定位和地图绘制使用该坐标系，像高德地图、腾讯地图。</p>
+<p>加密坐标的偏移是非线性随机的，因此从火星坐标推出真实坐标是无法实现的。</p>
+<h3 id="BD-09-百度坐标系"><a href="#BD-09-百度坐标系" class="headerlink" title="BD-09 - 百度坐标系"></a>BD-09 - 百度坐标系</h3><p>百度基于火星坐标系使用二次加密后得到，用于百度地图。</p>
+<h3 id="Web-Mercator-墨卡托坐标系"><a href="#Web-Mercator-墨卡托坐标系" class="headerlink" title="Web Mercator - 墨卡托坐标系"></a>Web Mercator - 墨卡托坐标系</h3><p>墨卡托投影坐标系</p>
+<p>由于屏幕是平面的，我们必须将球面的地理坐标“投影”到平面上。这个过程会产生变形（形状、面积、距离或方向）。</p>
+<ol>
+<li>核心思想：通过数学公式将 (经度， 纬度) 转换为平面上的 (x, y) 像素坐标。</li>
+<li>单位：像素、米。</li>
+<li>常见投影：Web Mercator（EPSG:3857），这是互联网地图的事实标准。</li>
+</ol>
+<p><strong>特点：</strong></p>
+<ol>
+<li>(0, 0) 点位于地图的左上角。</li>
+<li>X轴向右（东）为正，Y轴向下（南）为正。</li>
+<li>世界的范围被投影到一个正方形上，经度范围 [-180, 180] 被映射到 X轴 [0, 256]（在缩放级别0时），纬度范围 [-85.06, 85.06] 被映射到 Y轴 [0, 256]（注意：无法显示南北两极）。</li>
+<li>随着缩放级别 z 的增加，整个世界地图的像素尺寸是 256 * 2^z。</li>
+</ol>
+<h2 id="3D场景坐标系"><a href="#3D场景坐标系" class="headerlink" title="3D场景坐标系"></a>3D场景坐标系</h2><h3 id="笛卡尔坐标系"><a href="#笛卡尔坐标系" class="headerlink" title="笛卡尔坐标系"></a>笛卡尔坐标系</h3><p>三条互相垂直的坐标轴（x、y、z）组成，用（x，y，z）表示空间中的一个点。</p>
+<p><img src="/img/9/image_3.png"></p>
+<h4 id="右手定则"><a href="#右手定则" class="headerlink" title="右手定则"></a>右手定则</h4><p>将右手的大拇指、食指和中指分别指向y、z、x 轴正方向，它们互相垂直。</p>
+<p>场景：WebGL、Three.js</p>
+<p><img src="/img/9/image_4.png"></p>
+<h4 id="左手定则"><a href="#左手定则" class="headerlink" title="左手定则"></a>左手定则</h4><p>将左手的大拇指、食指和中指分别指向y、z、x轴正方向，它们互相垂直。</p>
+<p>场景：Babylon.js</p>
+<p><img src="/img/9/image_5.png"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>2D地图坐标：将地球椭圆球面映射到2D平面地图上，区分地理坐标和投影坐标。</li>
+<li>3D场景坐标：是三维笛卡尔坐标系，Three.js默认Y轴向上，Z轴向外。</li>
+</ol>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/RockHill_001/article/details/133490059">CGCS2000、WGS84和ITRF框架坐标之间的差异和转换方法</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7239308118474588217">ThreeJS 坐标系（旋转跳跃，永不停歇）</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://ccofhome.github.io">CC码码</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://ccofhome.github.io/2025/10/30/%E5%89%8D%E7%AB%AF2D%E5%9C%B0%E5%9B%BE%E5%92%8C3D%E5%9C%BA%E6%99%AF%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87%E7%B3%BB/">https://ccofhome.github.io/2025/10/30/前端2D地图和3D场景中的坐标系/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ccofhome.github.io" target="_blank">CC码码</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></div><div class="post_share"><div class="social-share" data-image="/img/9/image_1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2025/10/21/%E8%A7%A3%E5%86%B3%E5%89%8D%E7%AB%AF%E5%A4%9A%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%80%9A%E4%BF%A1%EF%BC%9ABroadcastChannel/" title="解决前端多标签页通信：BroadcastChannel"><img class="cover" src="/img/8/image_1.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">解决前端多标签页通信：BroadcastChannel</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/05/31/Window%20Management%20API%20%E5%B1%8F%E5%B9%95%E7%AE%A1%E7%90%86/" title="Window Management API 屏幕管理"><img class="cover" src="/img/4/image_1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-31</div><div class="title">Window Management API 屏幕管理</div></div></a></div><div><a href="/2024/06/21/%E5%89%8D%E7%AB%AF%E5%8F%AF%E4%BB%A5%E7%8E%A9%E2%80%9C%E9%94%81%E2%80%9D%F0%9F%94%90%E4%BA%86/" title="前端可以玩“锁”🔐了"><img class="cover" src="/img/5/image_1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-21</div><div class="title">前端可以玩“锁”🔐了</div></div></a></div><div><a href="/2024/04/17/%E5%89%8D%E7%AB%AF%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87(Mac%E3%80%81Window%E9%80%9A%E7%94%A8)/" title="前端装机必备(Mac、Window通用)"><img class="cover" src="/img/1/image_1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-17</div><div class="title">前端装机必备(Mac、Window通用)</div></div></a></div><div><a href="/2025/10/21/%E8%A7%A3%E5%86%B3%E5%89%8D%E7%AB%AF%E5%A4%9A%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%80%9A%E4%BF%A1%EF%BC%9ABroadcastChannel/" title="解决前端多标签页通信：BroadcastChannel"><img class="cover" src="/img/8/image_1.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-21</div><div class="title">解决前端多标签页通信：BroadcastChannel</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/ccmama.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">CC码码</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">更多AI福利，敬请关注公众号《CC码码》</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2D%E5%9C%B0%E5%9B%BE%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">2.</span> <span class="toc-text">2D地图坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WGS84-%E4%B8%96%E7%95%8C%E5%A4%A7%E5%9C%B0%E6%B5%8B%E9%87%8F%E7%B3%BB%E7%BB%9F%EF%BC%881984%E5%B9%B4%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">WGS84 - 世界大地测量系统（1984年）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CGCS2000-2000%E5%9B%BD%E5%AE%B6%E5%A4%A7%E5%9C%B0%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">2.2.</span> <span class="toc-text">CGCS2000 - 2000国家大地坐标系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GCJ-02-%E7%81%AB%E6%98%9F%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">2.3.</span> <span class="toc-text">GCJ-02 - 火星坐标系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BD-09-%E7%99%BE%E5%BA%A6%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">2.4.</span> <span class="toc-text">BD-09 - 百度坐标系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-Mercator-%E5%A2%A8%E5%8D%A1%E6%89%98%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">2.5.</span> <span class="toc-text">Web Mercator - 墨卡托坐标系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3D%E5%9C%BA%E6%99%AF%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">3.</span> <span class="toc-text">3D场景坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">3.1.</span> <span class="toc-text">笛卡尔坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%B3%E6%89%8B%E5%AE%9A%E5%88%99"><span class="toc-number">3.1.1.</span> <span class="toc-text">右手定则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A6%E6%89%8B%E5%AE%9A%E5%88%99"><span class="toc-number">3.1.2.</span> <span class="toc-text">左手定则</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="toc-number">5.</span> <span class="toc-text">参考文章</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/10/30/%E5%89%8D%E7%AB%AF2D%E5%9C%B0%E5%9B%BE%E5%92%8C3D%E5%9C%BA%E6%99%AF%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87%E7%B3%BB/" title="前端2D地图和3D场景中的坐标系"><img src="/img/9/image_1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端2D地图和3D场景中的坐标系"/></a><div class="content"><a class="title" href="/2025/10/30/%E5%89%8D%E7%AB%AF2D%E5%9C%B0%E5%9B%BE%E5%92%8C3D%E5%9C%BA%E6%99%AF%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87%E7%B3%BB/" title="前端2D地图和3D场景中的坐标系">前端2D地图和3D场景中的坐标系</a><time datetime="2025-10-30T01:30:00.000Z" title="发表于 2025-10-30 09:30:00">2025-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/10/21/%E8%A7%A3%E5%86%B3%E5%89%8D%E7%AB%AF%E5%A4%9A%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%80%9A%E4%BF%A1%EF%BC%9ABroadcastChannel/" title="解决前端多标签页通信：BroadcastChannel"><img src="/img/8/image_1.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决前端多标签页通信：BroadcastChannel"/></a><div class="content"><a class="title" href="/2025/10/21/%E8%A7%A3%E5%86%B3%E5%89%8D%E7%AB%AF%E5%A4%9A%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%80%9A%E4%BF%A1%EF%BC%9ABroadcastChannel/" title="解决前端多标签页通信：BroadcastChannel">解决前端多标签页通信：BroadcastChannel</a><time datetime="2025-10-21T01:30:00.000Z" title="发表于 2025-10-21 09:30:00">2025-10-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/14/%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E5%A4%9A%E4%B8%AA%20Git%20%E5%AF%86%E9%92%A5%EF%BC%88%E5%8D%95%E5%B9%B3%E5%8F%B0%E5%A4%9A%E8%B4%A6%E5%8F%B7%EF%BC%89/" title="管理你的多个 Git 密钥（单平台多账号）"><img src="/img/7/image_2.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="管理你的多个 Git 密钥（单平台多账号）"/></a><div class="content"><a class="title" href="/2025/06/14/%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E5%A4%9A%E4%B8%AA%20Git%20%E5%AF%86%E9%92%A5%EF%BC%88%E5%8D%95%E5%B9%B3%E5%8F%B0%E5%A4%9A%E8%B4%A6%E5%8F%B7%EF%BC%89/" title="管理你的多个 Git 密钥（单平台多账号）">管理你的多个 Git 密钥（单平台多账号）</a><time datetime="2025-06-14T01:30:00.000Z" title="发表于 2025-06-14 09:30:00">2025-06-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/13/%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E5%A4%9A%E4%B8%AA%20Git%20%E5%AF%86%E9%92%A5%EF%BC%88%E5%A4%9A%E5%B9%B3%E5%8F%B0%E5%A4%9A%E8%B4%A6%E5%8F%B7%EF%BC%89/" title="管理你的多个 Git 密钥（多平台多账号）"><img src="/img/7/image_1.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="管理你的多个 Git 密钥（多平台多账号）"/></a><div class="content"><a class="title" href="/2025/06/13/%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E5%A4%9A%E4%B8%AA%20Git%20%E5%AF%86%E9%92%A5%EF%BC%88%E5%A4%9A%E5%B9%B3%E5%8F%B0%E5%A4%9A%E8%B4%A6%E5%8F%B7%EF%BC%89/" title="管理你的多个 Git 密钥（多平台多账号）">管理你的多个 Git 密钥（多平台多账号）</a><time datetime="2025-06-13T01:30:00.000Z" title="发表于 2025-06-13 09:30:00">2025-06-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/21/%E5%8E%9F%E7%94%9F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BD%ACuniapp/" title="原生微信小程序转uniapp"><img src="/img/6/image_1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="原生微信小程序转uniapp"/></a><div class="content"><a class="title" href="/2024/10/21/%E5%8E%9F%E7%94%9F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%BD%ACuniapp/" title="原生微信小程序转uniapp">原生微信小程序转uniapp</a><time datetime="2024-10-21T01:00:00.000Z" title="发表于 2024-10-21 09:00:00">2024-10-21</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By CC码码</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><span>晋ICP备20004225号</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
